@@ -1,1 +1,19 @@
-
+name: Deploy via ftp
+on:
+    push: 
+        branches: 
+            - main
+name: Deploy website on push            
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Upload ftp
+      uses: genietim/ftp-action@releases/v4
+      with:
+        server: prastowonugroho.my.id
+        user: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: /api.prastowonugroho.my.id/
