@@ -17,4 +17,4 @@ jobs:
           server: prastowonugroho.my.id
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /myapps
+          server-dir: /myapps/
