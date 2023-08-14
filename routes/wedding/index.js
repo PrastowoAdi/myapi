@@ -2,6 +2,7 @@ const express = require("express");
 const {
   weddingUserLogin,
   getUserByUsername,
+  getUserByUsernamePublic,
   weddingRegisterUser,
   weddingUpdateBrideGroom,
   weddingUpdateCountdown,
@@ -11,6 +12,7 @@ const {
 const { verifyToken } = require("../../middleware");
 const router = express.Router();
 
+router.get("/:username", getUserByUsernamePublic);
 router.post("/login", weddingUserLogin);
 router.post("/register", weddingRegisterUser);
 router.post("/register", weddingRegisterUser);
