@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 
 const dailyRoute = require("./routes/daily");
+const weddingRoute = require("./routes/wedding");
 
 const app = express();
 dotenv.config();
@@ -23,6 +24,7 @@ app.use(cors({}));
 app.use(express.json({ extended: false }));
 
 app.use("/api/daily", dailyRoute);
+app.use("/api/wedding", weddingRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
