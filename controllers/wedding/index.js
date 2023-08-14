@@ -4,6 +4,17 @@ const decoded = require("jwt-decode");
 const jwt = require("jsonwebtoken");
 
 module.exports = {
+  getListUser: async (req, res, next) => {
+    try {
+      const user = await Wedding.find().select("username");
+
+      res.status(200).json({
+        data: user,
+      });
+    } catch (err) {
+      next(err);
+    }
+  },
   getUserByUsernamePublic: async (req, res, next) => {
     try {
       const { username } = req.params;

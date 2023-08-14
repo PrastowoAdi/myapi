@@ -8,10 +8,12 @@ const {
   weddingUpdateCountdown,
   weddingUpdateLoveStory,
   weddingUpdateShareLove,
+  getListUser,
 } = require("../../controllers/wedding");
 const { verifyToken } = require("../../middleware");
 const router = express.Router();
 
+router.get("/", getListUser);
 router.get("/:username", getUserByUsernamePublic);
 router.post("/login", weddingUserLogin);
 router.post("/register", weddingRegisterUser);
