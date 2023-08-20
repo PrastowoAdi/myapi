@@ -121,6 +121,14 @@ const WeddingSchema = new Schema(
           type: String,
           default: "",
         },
+        startAkadDate: {
+          type: String,
+          default: "",
+        },
+        endAkadDate: {
+          type: String,
+          default: "",
+        },
       },
       resepsi: {
         location_name: {
@@ -136,6 +144,14 @@ const WeddingSchema = new Schema(
           default: "",
         },
         date: {
+          type: String,
+          default: "",
+        },
+        startResepsiDate: {
+          type: String,
+          default: "",
+        },
+        endResepsiDate: {
           type: String,
           default: "",
         },
