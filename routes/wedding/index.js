@@ -14,11 +14,11 @@ const { verifyToken } = require("../../middleware");
 const router = express.Router();
 
 router.get("/", getListUser);
-router.get("/:username", getUserByUsernamePublic);
+router.get("/detail/:username", getUserByUsernamePublic);
+router.get("/user", verifyToken, getUserByUsername);
 router.post("/login", weddingUserLogin);
 router.post("/register", weddingRegisterUser);
 router.post("/register", weddingRegisterUser);
-router.get("/user", verifyToken, getUserByUsername);
 router.put("/user-love-story", verifyToken, weddingUpdateLoveStory);
 router.put("/user-share-love", verifyToken, weddingUpdateShareLove);
 router.put("/user-countdown", verifyToken, weddingUpdateCountdown);
