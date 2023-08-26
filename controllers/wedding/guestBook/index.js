@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const GuestBook = require("../../../models/wedding/guestBook");
 
 module.exports = {
@@ -19,6 +20,9 @@ module.exports = {
   guestGet: async (req, res, next) => {
     const { id } = req.params;
     try {
+      if (!mongoose.Types.ObjectId.isValid(id))
+        return res.status(200).json({ data: [] });
+
       const guest = await GuestBook.find({
         weddingId: id,
       }).sort({
