@@ -15,6 +15,7 @@ module.exports = {
       next(err);
     }
   },
+
   getUserByUsernamePublic: async (req, res, next) => {
     try {
       const { username } = req.params;
@@ -30,6 +31,7 @@ module.exports = {
       next(err);
     }
   },
+
   weddingUserLogin: async (req, res, next) => {
     try {
       const user = await Wedding.findOne({
